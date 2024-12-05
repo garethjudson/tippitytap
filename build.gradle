@@ -17,6 +17,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'de.siegmar:fastcsv:3.4.0'
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
 
@@ -31,9 +32,7 @@ java {
 }
 
 application {
-    // Define the main class for the application.
-    // TODO FIX
-    mainClass = 'org.example.App'
+    mainClass = 'org.tippitytap.Application'
 }
 
 // Defer styling to spotless google format

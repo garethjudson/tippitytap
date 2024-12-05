@@ -49,7 +49,7 @@ public class Trip implements Comparable<Trip> {
     this.started = started;
   }
 
-  public Instant getEnded() {
+  public Instant getFinished() {
     return ended;
   }
 
