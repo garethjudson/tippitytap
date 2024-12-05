@@ -13,6 +13,7 @@ Use an external lib for the csv parsing and testing.
    - just reducing the amount of code to write in a short time
 3. Input csv has a header row of: ID,DateTimeUTC,TapType,StopId,CompanyId,BusId,PAN
    - The casing is important. In the supplied requirements the BusId was BusID, I corrected this to be consistent with the other headers
+4. Tap IDs are always unique, and can in effect, be ignored for the associated requirements
 
 ## Setup
 You will need JDK 23. You should then be able to use the included gradlew wrapper to build and test the project
@@ -32,6 +33,8 @@ To run the application:
 Where `<input csv>` should be replaced with a path to an input csv file where the taps will be read from 
 And `<output csv>` should be replaced with a path to an output csv where trips output will be written to
 
+I haven't provided a docker file or a built an executable jar as it seems a little over the top.
+
 ## Testing with CSV
 The easiest way to test the code is to use the `ApplicationTest`.
 It uses a convention of reading csv files from the `src/test/resources/csvInput` directory.
@@ -43,3 +46,5 @@ The input file can then be added to the parameterised test.
 - adequate logging
 - failures generally throw exceptions which totally abort the process 
 - all built with the idea that data going in is valid
+- testing for this is currently not as thorough as I would generally be
+  - particularly around errors and edge cases, I really have only tested the happy path
