@@ -33,10 +33,8 @@ class ApplicationTest {
     // Just wanted to make it obvious which fields were not matching by putting a clear set of
     // assertions with an appropriate message
     // I don't like how this looks. But I don't think there's value in refactoring if it works.
-    try (
-            CsvReader<NamedCsvRecord> actual = CsvReader.builder().ofNamedCsvRecord(outputFile);
-            CsvReader<NamedCsvRecord> expected = CsvReader.builder().ofNamedCsvRecord(expectedFile)
-    ) {
+    try (CsvReader<NamedCsvRecord> actual = CsvReader.builder().ofNamedCsvRecord(outputFile);
+        CsvReader<NamedCsvRecord> expected = CsvReader.builder().ofNamedCsvRecord(expectedFile)) {
       var actualList = actual.stream().toList();
       var expectedList = expected.stream().toList();
 
